@@ -31,6 +31,6 @@ telnet client
 tcpdump
 awk, cut, diff, find, grep, sed, vi editor, wc
 jq
-/bin/sh shell interpreter - not /bin/bash
+/bin/sh
 openssl
 ```
