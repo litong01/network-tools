@@ -30,19 +30,18 @@ spec:
 # Tools included in this imae
 
 ```
-
-    apk package manager
-    Nginx Web Server (port 80, port 443) - customizable ports!
-    wget, curl
-    dig, nslookup
-    ip, ifconfig, route, traceroute, tracepath, mtr
-    ping, arp, arping
-    ps, netstat
-    gzip, cpio, tar
-    telnet client
-    tcpdump
-    awk, cut, diff, find, grep, sed, vi editor, wc
-    jq
-    /bin/sh shell interpreter - not /bin/bash
-    openssl
+apk package manager
+Nginx Web Server (port 80, port 443) - customizable ports!
+wget, curl
+dig, nslookup
+ip, ifconfig, route, traceroute, tracepath, mtr
+ping, arp, arping
+ps, netstat
+gzip, cpio, tar
+telnet client
+tcpdump
+awk, cut, diff, find, grep, sed, vi editor, wc
+jq
+/bin/sh shell interpreter - not /bin/bash
+openssl
 ```
