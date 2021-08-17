@@ -4,27 +4,16 @@ Docker image which includes multiple network debugging tools
 This docker image is based on praqma/network-multitool:alpine-minimal.
 Credit of creating that image goes to praqma.
 
-The added tool is openssl to allow openssl s_client -connect
-
-# Deploy onto Kubernetes
-
-Use following yaml file to deploy this tool set to kubernetes cluster
+# Deploy onto Kubernetes as a pod
 
 ```
----
-apiVersion: v1
-kind: Pod
-metadata:
-  name: netdebugger
-  labels:
-    app: debugger
-spec:
-  containers:
-    - name: networktools
-      image: email4tong/network-tools
-      ports:
-        - containerPort: 80
+kubectl run networktools --image=email4tong/network-tools
+```
 
+# Deploy onto Kubernetes as a deployment
+
+```
+kubectl create deployment networktools --image=email4tong/network-tools
 ```
 
 # Tools included in this imae
