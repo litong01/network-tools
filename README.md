@@ -16,7 +16,7 @@ kubectl run networktools --image=email4tong/network-tools
 kubectl create deployment networktools --image=email4tong/network-tools
 ```
 
-# Tools included in this imae
+# Tools included in this image
 
 ```
 apk package manager
