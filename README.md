@@ -10,10 +10,16 @@ Credit of creating that image goes to praqma.
 kubectl run networktools --image=email4tong/network-tools
 ```
 
-# Deploy onto Kubernetes as a deployment
+# Deploy onto Kubernetes as a deployment and expose to outside
 
 ```
 kubectl create deployment networktools --image=email4tong/network-tools
+
+kubectl expose deployment networktools --port=80 --target-port=80 \
+        --name=networktools --type=LoadBalancer
+kubectl expose deployment networktools --port=443 --target-port=443 \
+        --name=networktools --type=LoadBalancer
+
 ```
 
 # Tools included in this image
