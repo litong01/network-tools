@@ -15,11 +15,27 @@ kubectl run networktools --image=email4tong/network-tools
 ```
 kubectl create deployment networktools --image=email4tong/network-tools
 
-kubectl expose deployment networktools --port=80 --target-port=80 \
-        --name=networktools --type=LoadBalancer
-kubectl expose deployment networktools --port=443 --target-port=443 \
-        --name=networktools --type=LoadBalancer
-
+cat << EOF | kubectl apply -f -
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: networktools
+  name: networktools
+spec:
+  ports:
+  - name: http
+    port: 80
+    protocol: TCP
+    targetPort: 80
+  - name: https
+    port: 443
+    protocol: TCP
+    targetPort: 443
+  selector:
+    app: networktools
+  type: LoadBalancer
+EOF
 ```
 
 # Tools included in this image
