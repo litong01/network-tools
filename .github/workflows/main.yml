@@ -52,3 +52,10 @@ jobs:
         docker buildx build --push \
          --tag email4tong/network-tools:latest \
          --platform linux/amd64,linux/arm64 .
+
+    - name: Build and push images with v0.1.0 tag
+      run: |
+        docker buildx build --push \
+         --tag email4tong/network-tools:v0.1.0 \
+         --platform linux/amd64,linux/arm64 .
+
