@@ -4,6 +4,7 @@ RUN apk add --update openssl sudo && rm -rf /var/cache/apk/*
 RUN adduser -D worker -u 1001 && mkdir -p /etc/sudoers.d && \
     echo "worker ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/worker && \
     chmod 0440 /etc/sudoers.d/worker && \
-    chown -R worker:worker /usr/share/nginx /certs
+    chown -R worker:worker /usr/share/nginx && \
+    chmod o+r /certs/*
 
 USER worker
