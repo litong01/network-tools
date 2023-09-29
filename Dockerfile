@@ -5,6 +5,6 @@ RUN adduser -D worker -u 1001 && mkdir -p /etc/sudoers.d && \
     echo "worker ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/worker && \
     chmod 0440 /etc/sudoers.d/worker && \
     chown -R worker:worker /usr/share/nginx && \
-    chmod o+r /certs/*
+    chmod o+r /certs/* && chmod o+r /usr/share/nginx/html/*
 
 USER worker
